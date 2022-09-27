@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Buildkite Custom UI
 @namespace      github.com/yourfriendbuzz/space-guacamole
-@version        0.0.1
+@version        0.1.0
 @description    Experiment with some new UI ideas
 @author         Buzz Usborne
 @license        ISC
@@ -336,9 +336,90 @@
     margin-bottom: 24px;
   }
   #main .analytics-nav span[style]:nth-child(2) a {
-    margin-top:-20px!important;
+    margin-top: -20px !important;
   }
   #main .analytics-nav span[style]:nth-child(2) span {
-    top:-12px;
+    top: -12px;
+  }
+}
+
+@-moz-document regexp("https://buildkite\\.com/[a-zA-Z]+/agent.*")
+{
+  #nav-container .container .flex span.md-hide .flex a:nth-child(1) {
+    padding-left: 15px;
+    background: var(--purple-100);
+    border: 4px solid var(--slate-100);
+    box-sizing: border-box;
+    border-radius: 7px;
+    color: var(--purple-600);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/builds.*")
+{
+  #nav-container .container .flex span.md-hide .flex a:nth-child(2) {
+    padding-left: 15px;
+    background: var(--purple-100);
+    border: 4px solid var(--slate-100);
+    box-sizing: border-box;
+    border-radius: 7px;
+    color: var(--purple-600);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/agents.*")
+{
+  #nav-container .container .flex span.md-hide .flex a:nth-child(3) {
+    padding-left: 15px;
+    background: var(--purple-100);
+    border: 4px solid var(--slate-100);
+    box-sizing: border-box;
+    border-radius: 7px;
+    color: var(--purple-600);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/clusters.*")
+{
+  #nav-container .container .flex span.md-hide .flex a:nth-child(4) {
+    padding-left: 15px;
+    background: var(--purple-100);
+    border: 4px solid var(--slate-100);
+    box-sizing: border-box;
+    border-radius: 7px;
+    color: var(--purple-600);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/analytics.*")
+{
+  #nav-container .container .flex span.md-hide .flex a:nth-child(5) {
+    padding-left: 15px;
+    background: var(--purple-100);
+    border: 4px solid var(--slate-100);
+    box-sizing: border-box;
+    border-radius: 7px;
+    color: var(--purple-600);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/settings.*")
+{
+  #nav-container .container .flex span.md-hide .flex a:nth-child(6) {
+    padding-left: 15px;
+    background: var(--purple-100);
+    border: 4px solid var(--slate-100);
+    box-sizing: border-box;
+    border-radius: 7px;
+    color: var(--purple-600);
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
