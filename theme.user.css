@@ -65,7 +65,21 @@
 
 @-moz-document 
   regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/settings.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/users.*")
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/users.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/member-permissions.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/teams.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/billing.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/usage.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/pipeline-settings.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/pipeline-migration.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/reports.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/repository-providers.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/services.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/sso.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/audit-log.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/api-access-audit.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/user-activity-audit.*"),
+  regexp("https://buildkite\\.com/user.*")
 {
 
   /* Sidebar blocks */
