@@ -1,9 +1,9 @@
-# Buildkite Custom UI
+# 🥑 Buildkite Custom UI
 
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://github.com/yourfriendbuzz/space-guacamole/raw/main/theme.user.css)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-Enable some fun UI experiments which may or may not make your Buildkite experience better
+Use this to enjoy some fun UI experiments which may or may not make your Buildkite experience better.
 
 ## Installation
 
