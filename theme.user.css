@@ -129,7 +129,7 @@
     border-radius: 4px;
     -webkit-font-smoothing: antialiased;
     height: 40px;
-    min-height: 40px;
+    min-height: 40px!important;
     transition: background 0.16s;
   }
   .container .md-col-3 section.border.border-gray a .badge--solid {
