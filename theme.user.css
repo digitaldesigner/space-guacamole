@@ -1,0 +1,168 @@
+/* ==UserStyle==
+@name           Buildkite Custom UI
+@version        0.0.1
+@description    Experiment with some new UI ideas
+@author         Buzz Usborne
+@license        ISC
+@homepageURL    https://github.com/yourfriendbuzz/space-guacamole/
+==/UserStyle== */
+@-moz-document regexp("https://buildkite\\.com/(?!docs).*")
+{
+  /* Sidebar blocks */
+  .container .md-col-3 {
+    margin-top: 4px;
+  }
+  .container .md-col-3 section.border.border-gray {
+    border: none;
+  }
+
+  /* Heading container */
+  .container .md-col-3 section.border.border-gray .bg-silver {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  /* Headings */
+  .container .md-col-3 section.border.border-gray .bg-silver h3 {
+    color: var(--charcoal-700);
+    font-weight: 500;
+    font-size: 13px;
+    border-top: 1px solid var(--gray-500);
+    width: calc(100% - 20px);
+    margin: 0 10px 10px 10px;
+    padding: 15px 0 0 0;
+  }
+  /* First Heading */
+  .container .md-col-3 section.border.border-gray:first-child .bg-silver h3 {
+    border-top: none;
+    padding-top: 0;
+    font-size: 18px;
+    margin: 0 0 19px 0;
+    position: relative;
+    line-height: 40px;
+    padding-left: 48px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container
+    .md-col-3
+    section.border.border-gray:first-child
+    .bg-silver
+    h3::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("https://buildkite.com/_next/static/assets/assets/images/brand-assets/buildkite-mark-83624418.svg")
+      center no-repeat rgb(26, 0, 46);
+    background-size: 22px;
+    border-radius: 4px;
+  }
+
+  /* General rows (links) */
+  .container .md-col-3 section.border.border-gray a {
+    padding: 0 10px;
+    font-weight: normal;
+    color: var(--charcoal-700);
+    border-radius: 4px;
+    -webkit-font-smoothing: antialiased;
+    height: 40px;
+    min-height: 40px;
+    transition: background 0.16s;
+  }
+  .container .md-col-3 section.border.border-gray a .badge--solid {
+    background: white;
+    border: 1px solid var(--gray-500);
+    color: var(--charcoal-300);
+    font-size: 11px;
+    border-radius: 4px;
+  }
+  .container .md-col-3 section.border.border-gray a .icon-mr {
+    width: 24px;
+    height: 24px;
+    margin-right: 14px;
+  }
+  .container .md-col-3 section.border.border-gray a .icon-mr svg {
+    width: 20px;
+  }
+  /* Row interaction */
+  .container .md-col-3 section.border.border-gray a:hover {
+    background: #f8f7ff;
+  }
+  .container .md-col-3 section.border.border-gray a:hover .badge--solid {
+    border-color: var(--purple-300);
+    color: var(--charcoal-500);
+  }
+
+  /* Selected link */
+  .container .md-col-3 section.border.border-gray a.lime {
+    background: var(--purple-100);
+    font-weight: 500;
+    color: var(--purple-600);
+  }
+  .container .md-col-3 section.border.border-gray a.lime .badge--solid {
+    color: var(--purple-600);
+    font-weight: 500;
+    border-color: var(--purple-300);
+  }
+
+  /* Primary nav -> Buildkite logo */
+  #nav-container
+    .container
+    button.btn.focus-lime.hover-faded-children
+    div.flex-none {
+    width: 28px;
+    height: 28px;
+    overflow: hidden;
+    opacity: 1;
+    background: url("https://buildkite.com/_next/static/assets/assets/images/brand-assets/buildkite-mark-83624418.svg")
+      left center no-repeat;
+    background-size: 26px;
+  }
+  #nav-container
+    .container
+    button.btn.focus-lime.hover-faded-children
+    div.flex-none
+    img {
+    display: none;
+  }
+  /* Primary nav -> Users name */
+  #nav-container .container button.btn.focus-lime.py0 span.xs-offscreen {
+    display: none;
+  }
+  /* Primary nav -> Badges */
+  #nav-container .container a .badge--solid {
+    background: white;
+    border: 1px solid var(--gray-500);
+    color: var(--charcoal-500);
+    font-weight: 500;
+  }
+  #nav-container .bg-warning-stripes {
+    background: var(--slate-100);
+    margin-top: 4px;
+  }
+  #nav-container .bg-warning-stripes::before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    content: "";
+    background-color: var(--orange-500);
+    background-image: linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.5) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.5) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 10px 10px;
+    -webkit-animation: animation-loading-bar 100s infinite linear;
+    animation: animation-loading-bar 100s infinite linear;
+  }
+}
