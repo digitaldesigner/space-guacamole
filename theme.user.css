@@ -7,7 +7,7 @@
 @license        ISC
 @homepageURL    https://github.com/yourfriendbuzz/space-guacamole/
 ==/UserStyle== */
-@-moz-document regexp("https://buildkite\\.com/(?!docs).*")
+@-moz-document url-prefix("https://buildkite.com/")
 {
   /* Sidebar blocks */
   .container .md-col-3 {
