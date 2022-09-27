@@ -187,7 +187,7 @@
     border-color: var(--purple-300);
   }
 
-  #nav-container .container .flex span.md-hide .flex a:hover {
+  #nav-container .container .flex span.md-hide .flex a.hover-lime:hover {
     color: var(--purple-600);
   }
   
