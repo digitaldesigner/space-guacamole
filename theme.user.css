@@ -8,14 +8,11 @@
 @homepageURL    https://github.com/yourfriendbuzz/space-guacamole/
 ==/UserStyle== */
 
-@-moz-document url-prefix("https://buildkie.com/")
+@-moz-document regexp("https://buildkite\\.com/(?!docs).*")
 {
   #nav-container .container .flex span.md-hide .flex a.hover-lime:hover {
     color: var(--purple-600);
   }
-}
-@-moz-document regexp("https://buildkite\\.com/(?!docs).*")
-{
   /* Primary nav -> Buildkite logo */
   #nav-container
     .container
