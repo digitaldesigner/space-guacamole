@@ -240,3 +240,92 @@
     animation: animation-loading-bar 100s infinite linear;
   }
 }
+
+@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/analytics.*"){
+#main .analytics-nav {
+		min-width: 240px;
+		max-width: 240px;
+		display: block;
+		margin: 4px 20px 0 0;
+		padding-top: 0;
+		padding-right: 0;
+		border-right: 0;
+}
+#main .analytics-nav span {
+		display: block;
+		float: left;
+		width: 100%;
+		margin-bottom: 0;
+		margin-left: 0;
+		position: relative;
+}
+
+#main .analytics-nav span span {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		top: 8px;
+		left: 10px;
+}
+
+#main .analytics-nav span a {
+		background-color: white;
+		float: left;
+		width: 100%;
+		height: 40px;
+		border-radius: 4px;
+		line-height: 40px;
+		text-decoration: none;
+		margin: 0;
+		box-sizing: border-box;
+		padding: 0 0 0 48px;
+		border: 0;
+}
+
+#main .analytics-nav span svg {
+		margin: 3px 0 0 5px;
+}
+#main .analytics-nav span svg path {
+		stroke: var(--charcoal-700);
+}
+
+#main .analytics-nav span a.bold {
+		background: var(--purple-100);
+		color: var(--purple-600);
+		-webkit-font-smoothing: antialiased;
+}
+
+.container-test-analytics {
+		padding-left: 0;
+}
+
+#main .analytics-nav span[style]:first-child a {
+		margin-bottom: 24px;
+		font-size: 18px;
+		font-weight: 500;
+		color: var(--charcoal-900);
+		-webkit-font-smoothing: antialiased;
+}
+#main .analytics-nav span[style]:first-child span {
+		width: 40px;
+		height: 40px;
+		top: 0;
+		left: 0;
+		border-radius: 4px;
+		background: url(https://buildkite.com/_next/static/assets/assets/images/brand-assets/buildkite-mark-83624418.svg)
+				center no-repeat rgb(26, 0, 46);
+		background-size: 22px;
+}
+#main .analytics-nav span[style]:first-child span svg {
+		display: none;
+}
+
+.container-test-analytics.PageHeader h1 {
+		display: none;
+}
+.container-test-analytics.PageHeader {
+		min-height: 40px;
+		margin-top: 4px;
+		margin-bottom: 24px;
+}
+}
