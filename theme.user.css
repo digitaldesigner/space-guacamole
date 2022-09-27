@@ -90,6 +90,17 @@
   regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/user-activity-audit.*"),
   regexp("https://buildkite\\.com/user.*")
 {
+  
+  #nav-container .container .flex span.md-hide .flex a:nth-child(6) {
+    background: var(--purple-100);
+    border: 4px solid var(--slate-100);
+    box-sizing: border-box;
+    border-radius: 7px;
+    color: var(--purple-600);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
   /* Sidebar blocks */
   .container .md-col-3 {
     margin-top: 4px;
@@ -348,7 +359,6 @@
 
 @-moz-document 
   regexp("https://buildkite\\.com/[a-zA-Z]+/[a-zA-Z]+/builds.*"),
-  regexp("https://buildkite\\.com/[a-zA-Z]+/[a-zA-Z]+/settings.*"), 
   regexp("https://buildkite\\.com/[a-zA-Z]+/[a-zA-Z]+/steps.*"), 
   regexp("https://buildkite\\.com/[a-zA-Z]+")
 {
@@ -402,19 +412,6 @@
 @-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/analytics.*")
 {
   #nav-container .container .flex span.md-hide .flex a:nth-child(5) {
-    background: var(--purple-100);
-    border: 4px solid var(--slate-100);
-    box-sizing: border-box;
-    border-radius: 7px;
-    color: var(--purple-600);
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/settings.*")
-{
-  #nav-container .container .flex span.md-hide .flex a:nth-child(6) {
     background: var(--purple-100);
     border: 4px solid var(--slate-100);
     box-sizing: border-box;
