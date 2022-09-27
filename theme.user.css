@@ -7,8 +7,67 @@
 @license        ISC
 @homepageURL    https://github.com/yourfriendbuzz/space-guacamole/
 ==/UserStyle== */
-@-moz-document url-prefix("https://buildkite.com/")
+
+@-moz-document regexp("https://buildkite\\.com/(?!docs).*"){
+ 
+  /* Primary nav -> Buildkite logo */
+  #nav-container .container button.btn.focus-lime.hover-faded-children div.flex-none {
+    width: 28px;
+    height: 28px;
+    overflow: hidden;
+    opacity: 1;
+    background: url("https://buildkite.com/_next/static/assets/assets/images/brand-assets/buildkite-mark-83624418.svg")
+      left center no-repeat;
+    background-size: 26px;
+  }
+  #nav-container .container button.btn.focus-lime.hover-faded-children div.flex-none img {
+    display: none;
+  }
+  /* Primary nav -> Users name */
+  #nav-container .container button.btn.focus-lime.py0 span.xs-offscreen {
+    display: none;
+  }
+  /* Primary nav -> Badges */
+  #nav-container .container a .badge--solid {
+    background: white;
+    border: 1px solid var(--gray-500);
+    color: var(--charcoal-500);
+    font-weight: 500;
+  }
+  #nav-container .bg-warning-stripes {
+    background: var(--slate-100);
+    margin-top: 4px;
+  }
+  #nav-container .bg-warning-stripes::before {
+    position: fixed;
+    z-index:100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    content: "";
+    background-color: var(--orange-500);
+    background-image: linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.5) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.5) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 10px 10px;
+    -webkit-animation: animation-loading-bar 100s infinite linear;
+    animation: animation-loading-bar 100s infinite linear;
+  }
+}
+
+@-moz-document 
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/settings.*"),
+  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/users.*")
 {
+
   /* Sidebar blocks */
   .container .md-col-3 {
     margin-top: 4px;
