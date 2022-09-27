@@ -335,4 +335,10 @@
     margin-top: 4px;
     margin-bottom: 24px;
   }
+  #main .analytics-nav span[style]:nth-child(2) a {
+    margin-top:-20px!important;
+  }
+  #main .analytics-nav span[style]:nth-child(2) span {
+    top:-12px;
+  }
 }
