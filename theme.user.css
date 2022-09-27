@@ -8,6 +8,12 @@
 @homepageURL    https://github.com/yourfriendbuzz/space-guacamole/
 ==/UserStyle== */
 
+@-moz-document url-prefix("https://buildkie.com/")
+{
+  #nav-container .container .flex span.md-hide .flex a.hover-lime:hover {
+    color: var(--purple-600);
+  }
+}
 @-moz-document regexp("https://buildkite\\.com/(?!docs).*")
 {
   /* Primary nav -> Buildkite logo */
@@ -187,10 +193,6 @@
     border-color: var(--purple-300);
   }
 
-  #nav-container .container .flex span.md-hide .flex a.hover-lime:hover {
-    color: var(--purple-600);
-  }
-  
   /* Primary nav -> Buildkite logo */
   #nav-container
     .container
