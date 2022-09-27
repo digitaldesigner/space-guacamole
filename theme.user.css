@@ -46,7 +46,7 @@
   }
   #nav-container .bg-warning-stripes {
     background: var(--slate-100);
-    margin-top: 4px;
+    margin-top: 6px;
   }
   #nav-container .bg-warning-stripes::before {
     position: fixed;
@@ -54,7 +54,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 6px;
     content: "";
     background-color: var(--orange-500);
     background-image: linear-gradient(
@@ -68,8 +68,8 @@
       transparent
     );
     background-size: 10px 10px;
-    -webkit-animation: animation-loading-bar 100s infinite linear;
-    animation: animation-loading-bar 100s infinite linear;
+    -webkit-animation: animation-loading-bar 200s infinite linear;
+    animation: animation-loading-bar 200s infinite linear;
   }
 }
 
@@ -346,7 +346,11 @@
   }
 }
 
-@-moz-document regexp("https://buildkite\\.com/[a-zA-Z]+/agent.*"), regexp("https://buildkite\\.com/[a-zA-Z]+")
+@-moz-document 
+  regexp("https://buildkite\\.com/[a-zA-Z]+/[a-zA-Z]+/builds.*"),
+  regexp("https://buildkite\\.com/[a-zA-Z]+/[a-zA-Z]+/settings.*"), 
+  regexp("https://buildkite\\.com/[a-zA-Z]+/[a-zA-Z]+/steps.*"), 
+  regexp("https://buildkite\\.com/[a-zA-Z]+")
 {
   #nav-container .container .flex span.md-hide .flex a:nth-child(1) {
     background: var(--purple-100);
