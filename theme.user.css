@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Buildkite Custom UI
 @namespace      github.com/yourfriendbuzz/space-guacamole
-@version        0.1.0
+@version        0.1.1
 @description    Experiment with some new UI ideas
 @author         Buzz Usborne
 @license        ISC
@@ -109,6 +109,13 @@
   }
   .JobLogOutputComponent__Number {
     color: #93a1a1; /* base1 */
+  }
+  /* row hovers */
+  .JobLogOutputComponent__Header:hover,
+  .JobLogOutputComponent__Header--Highlighted:hover,
+  .JobLogOutputComponent__Header--Bootstrap--Highlighted:hover,
+  .JobLogOutputComponent__Header--Bootstrap:hover {
+    background: #fffbee; /* custom */
   }
 
   /* log toolbar */
