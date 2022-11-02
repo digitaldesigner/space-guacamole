@@ -71,6 +71,114 @@
     -webkit-animation: animation-loading-bar 200s infinite linear;
     animation: animation-loading-bar 200s infinite linear;
   }
+
+  /* base log structure and annotations */
+  .annotation-body pre.term,
+  .JobLogOutputComponent {
+    background: #fdf6e3; /* base3 */
+    color: #586e75; /* base01 */
+  }
+  .JobLogOutputComponent__Header,
+  .JobLogOutputComponent__Header--Highlighted,
+  .JobLogOutputComponent__Header--Bootstrap--Highlighted,
+  .JobLogOutputComponent__Header--Bootstrap {
+    background: #eee8d5; /* base2 */
+  }
+  .JobLogOutputComponent__Header--Bootstrap
+    .JobLogOutputComponent__Header__Name,
+  .JobLogOutputComponent__Header--Bootstrap--Highlighted
+    .JobLogOutputComponent__Header__Name {
+    color: #657b83; /* base00 */
+  }
+  .JobLogOutputComponent__Header--Highlighted .JobLogOutputComponent__Number,
+  .JobLogOutputComponent__Header--Bootstrap--Highlighted
+    .JobLogOutputComponent__Number {
+    color: #586e75; /* base01 */
+  }
+  .JobLogOutputComponent__Header--Bootstrap
+    .JobLogOutputComponent__Header__Name,
+  .JobLogOutputComponent__Header--Bootstrap--Highlighted
+    .JobLogOutputComponent__Header__Name {
+    color: #93a1a1; /* base1 */
+  }
+  .JobLogOutputComponent__Time__Badge {
+    background: #ddd6c0; /* custom */
+  }
+  .JobLogComponent .tabular-numerals {
+    color: #586e75; /* base01 */
+  }
+  .JobLogOutputComponent__Number {
+    color: #93a1a1; /* base1 */
+  }
+
+  /* log toolbar */
+  .JobLogOutputComponent__Button,
+  .JobLogOutputComponent__Button--Active {
+    color: #586e75; /* base01 */
+  }
+  .JobLogOutputComponent__Controls {
+    background: #fdf6e3; /* base3 */
+    border-color: #eee8d5; /* base2 */
+  }
+
+  /* generic colors */
+  .term-fg31 {
+    color: #cb4b16; /* orange */
+  }
+  .term-fg32 {
+    color: #859900; /* green */
+  }
+  .term-fg33 {
+    color: #b58900; /* yellow */
+  }
+  .term-fg34 {
+    color: #268bd2; /* blue */
+  }
+  .term-fg35 {
+    color: #d33682; /* magenta */
+  }
+  .term-fg36 {
+    color: #2aa198; /* cyan */
+  }
+
+  /* xterm colors */
+  .term-fgx48 {
+    color: #859900; /* green */
+  }
+
+  /* high intense colors */
+  .term-fgi1 {
+    color: #6c71c4; /* violet */
+  }
+  .term-fgi91 {
+    color: #dc322f; /* red */
+  }
+  .term-fgi92 {
+    color: #859900; /* green */
+  }
+  .term-fgi93 {
+    color: #b58900; /* yellow */
+  }
+  .term-fgi94 {
+    color: #268bd2; /* blue */
+  }
+  .term-fgi95 {
+    color: #d33682; /* magenta */
+  }
+  .term-fgi96 {
+    color: #2aa198; /* cyan */
+  }
+
+  /* background colors */
+  .term-bg40 {
+    background: #eee8d5; /* base2 */
+  }
+  .term-bg41 {
+    background: #eee8d5; /* base2 */
+  }
+  .term-bg42 {
+    background: #eee8d5; /* base2 */
+  }
 }
 
 @-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/settings.*"),
@@ -90,7 +198,6 @@
   regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/user-activity-audit.*"),
   regexp("https://buildkite\\.com/user.*")
 {
-  
   #nav-container .container .flex span.md-hide .flex a:nth-child(6) {
     background: var(--purple-100);
     border: 4px solid var(--slate-100);
@@ -100,7 +207,7 @@
     padding-left: 10px;
     padding-right: 10px;
   }
-  
+
   /* Sidebar blocks */
   .container .md-col-3 {
     margin-top: 4px;
@@ -357,8 +464,7 @@
   }
 }
 
-@-moz-document 
-  regexp("https://buildkite\\.com/[a-zA-Z]+/[a-zA-Z]+/builds.*"),
+@-moz-document regexp("https://buildkite\\.com/[a-zA-Z]+/[a-zA-Z]+/builds.*"),
   regexp("https://buildkite\\.com/[a-zA-Z]+/[a-zA-Z]+/steps.*"), 
   regexp("https://buildkite\\.com/[a-zA-Z]+")
 {
@@ -368,7 +474,7 @@
     box-sizing: border-box;
     border-radius: 7px;
     color: var(--purple-600);
-    padding-left: 10px!important;
+    padding-left: 10px !important;
     padding-right: 10px;
   }
 }
