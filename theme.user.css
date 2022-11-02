@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Buildkite Custom UI
 @namespace      github.com/yourfriendbuzz/space-guacamole
-@version        0.1.1
+@version        0.1.2
 @description    Experiment with some new UI ideas
 @author         Buzz Usborne
 @license        ISC
@@ -110,12 +110,30 @@
   .JobLogOutputComponent__Number {
     color: #93a1a1; /* base1 */
   }
-  /* row hovers */
+
+  /* interactions */
   .JobLogOutputComponent__Header:hover,
   .JobLogOutputComponent__Header--Highlighted:hover,
   .JobLogOutputComponent__Header--Bootstrap--Highlighted:hover,
   .JobLogOutputComponent__Header--Bootstrap:hover {
     background: #fffbee; /* custom */
+  }
+  .JobLogOutputComponent__Button:hover,
+  .JobLogOutputComponent__Button--Active:hover,
+  .JobLogOutputComponent__Button:focus,
+  .JobLogOutputComponent__Button--Active:focus {
+    color: #073642; /* base02 */
+  }
+
+  .JobLogOutputComponent__Number:hover {
+    color: #657b83; /* base00 */
+  }
+
+  .JobLogOutputComponent__Line--Highlighted {
+    background: white;
+  }
+  .JobLogOutputComponent__Line--Highlighted .JobLogOutputComponent__Number {
+    color: #657b83; /* base00 */
   }
 
   /* log toolbar */
