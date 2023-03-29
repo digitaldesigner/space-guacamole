@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Buildkite Custom UI
 @namespace      github.com/yourfriendbuzz/space-guacamole
-@version        0.1.3
+@version        0.1.4
 @description    Experiment with some new UI ideas
 @author         Buzz Usborne
 @license        ISC
@@ -10,565 +10,88 @@
 
 @-moz-document regexp("https://buildkite\\.com/(?!docs).*")
 {
-  :root {
-    --solarized-base03: #002b36;
-    --solarized-base02: #073642;
-    --solarized-base01: #586e75;
-    --solarized-base00: #657b83;
-    --solarized-base0: #839496;
-    --solarized-base1: #93a1a1;
-    --solarized-base2: #eee8d5;
-    --solarized-base3: #fdf6e3;
-    --solarized-yellow: #b58900;
-    --solarized-orange: #cb4b16;
-    --solarized-red: #dc322f;
-    --solarized-magenta: #d33682;
-    --solarized-violet: #6c71c4;
-    --solarized-blue: #268bd2;
-    --solarized-cyan: #2aa198;
-    --solarized-green: #859900;
-    --solarized-custom1: #ddd6c0;
-  }
-
-  #nav-container .container .flex span.md-hide .flex a.hover-lime:hover {
-    color: var(--purple-600);
-  }
-  /* Primary nav -> Buildkite logo */
-  #nav-container
-    .container
-    button.btn.focus-lime.hover-faded-children
-    div.flex-none {
-    width: 28px;
-    height: 28px;
-    overflow: hidden;
-    opacity: 1;
-    background: url("https://buildkite.com/_next/static/assets/assets/images/brand-assets/buildkite-mark-83624418.svg")
-      left center no-repeat;
-    background-size: 26px;
-  }
-  #nav-container
-    .container
-    button.btn.focus-lime.hover-faded-children
-    div.flex-none
-    img {
-    display: none;
-  }
-  /* Primary nav -> Users name */
-  #nav-container .container button.btn.focus-lime.py0 span.xs-offscreen {
-    display: none;
-  }
-  /* Primary nav -> Badges */
-  #nav-container .container a .badge--solid {
-    background: white;
-    border: 1px solid var(--gray-500);
-    color: var(--charcoal-500);
-    font-weight: 500;
-  }
-  #nav-container .bg-warning-stripes {
-    background: var(--slate-100);
-    margin-top: 6px;
-  }
-  #nav-container .bg-warning-stripes::before {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    content: "";
-    background-color: var(--orange-500);
-    background-image: linear-gradient(
-      -45deg,
-      rgba(255, 255, 255, 0.5) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(255, 255, 255, 0.5) 50%,
-      rgba(255, 255, 255, 0.5) 75%,
-      transparent 75%,
-      transparent
-    );
-    background-size: 10px 10px;
-    -webkit-animation: animation-loading-bar 200s infinite linear;
-    animation: animation-loading-bar 200s infinite linear;
-  }
-
-  /* base log structure and annotations */
-  .annotation-body pre.term,
-  .JobLogOutputComponent {
-    background: var(--solarized-base3);
-    color: var(--solarized-base01);
-  }
-  .JobLogOutputComponent__Header,
-  .JobLogOutputComponent__Header--Highlighted,
-  .JobLogOutputComponent__Header--Bootstrap--Highlighted,
-  .JobLogOutputComponent__Header--Bootstrap {
-    background: var(--solarized-base2);
-  }
-  .JobLogOutputComponent__Header--Bootstrap
-    .JobLogOutputComponent__Header__Name,
-  .JobLogOutputComponent__Header--Bootstrap--Highlighted
-    .JobLogOutputComponent__Header__Name {
-    color: var(--solarized-base00);
-  }
-  .JobLogOutputComponent__Header--Highlighted .JobLogOutputComponent__Number,
-  .JobLogOutputComponent__Header--Bootstrap--Highlighted
-    .JobLogOutputComponent__Number {
-    color: var(--solarized-base01);
-  }
-  .JobLogOutputComponent__Header--Bootstrap
-    .JobLogOutputComponent__Header__Name,
-  .JobLogOutputComponent__Header--Bootstrap--Highlighted
-    .JobLogOutputComponent__Header__Name {
-    color: var(--solarized-base1);
-  }
-  .JobLogOutputComponent__Time__Badge {
-    background: var(--solarized-custom1);
-  }
-  .JobLogComponent .tabular-numerals {
-    color: var(--solarized-base01);
-  }
-  .JobLogOutputComponent__Number {
-    color: var(--solarized-base1);
-  }
-
-  /* interactions */
-  .JobLogOutputComponent__Header:hover,
-  .JobLogOutputComponent__Header--Highlighted:hover,
-  .JobLogOutputComponent__Header--Bootstrap--Highlighted:hover,
-  .JobLogOutputComponent__Header--Bootstrap:hover {
-    background: var(--orange-100);
-  }
-  .JobLogOutputComponent__Button:hover,
-  .JobLogOutputComponent__Button--Active:hover,
-  .JobLogOutputComponent__Button:focus,
-  .JobLogOutputComponent__Button--Active:focus {
-    color: var(--solarized-base02);
-  }
-
-  .JobLogOutputComponent__Number:hover {
-    color: var(--solarized-base00);
-  }
-
-  .JobLogOutputComponent__Line--Highlighted {
-    background: var(--base-0);
-  }
-  .JobLogOutputComponent__Line--Highlighted .JobLogOutputComponent__Number {
-    color: var(--solarized-base00);
-  }
-
-  /* log toolbar */
-  .JobLogOutputComponent__Button,
-  .JobLogOutputComponent__Button--Active {
-    color: var(--solarized-base01);
-  }
-  .JobLogOutputComponent__Controls {
-    background: var(--solarized-base3);
-    border-color: var(--solarized-base2);
-  }
-
-  /* generic colors */
-  .term-fg31 {
-    color: var(--solarized-orange);
-  }
-  .term-fg32 {
-    color: var(--solarized-green);
-  }
-  .term-fg33 {
-    color: var(--solarized-yellow);
-  }
-  .term-fg34 {
-    color: var(--solarized-blue);
-  }
-  .term-fg35 {
-    color: var(--solarized-magenta);
-  }
-  .term-fg36 {
-    color: var(--solarized-cyan);
-  }
-
-  /* xterm colors */
-  .term-fgx48 {
-    color: var(--solarized-green);
-  }
-
-  /* high intense colors */
-  .term-fgi1 {
-    color: var(--solarized-violet);
-  }
-  .term-fgi91 {
-    color: var(--solarized-red);
-  }
-  .term-fgi92 {
-    color: var(--solarized-green);
-  }
-  .term-fgi93 {
-    color: var(--solarized-yellow);
-  }
-  .term-fgi94 {
-    color: var(--solarized-blue);
-  }
-  .term-fgi95 {
-    color: var(--solarized-magenta);
-  }
-  .term-fgi96 {
-    color: var(--solarized-cyan);
-  }
-
-  /* background colors */
-  .term-bg40 {
-    background: var(--solarized-base2);
-  }
-  .term-bg41 {
-    background: var(--solarized-base2);
-  }
-  .term-bg42 {
-    background: var(--solarized-base2);
-  }
-}
-
-@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/settings.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/users.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/member-permissions.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/teams.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/billing.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/usage.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/pipeline-settings.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/pipeline-migration.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/reports.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/repository-providers.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/services.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/sso.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/audit-log.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/api-access-audit.*"),
-  regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/user-activity-audit.*"),
-  regexp("https://buildkite\\.com/user.*")
-{
-  #nav-container .container .flex span.md-hide .flex a:nth-child(6) {
-    background: var(--purple-100);
-    border: 4px solid var(--slate-100);
-    box-sizing: border-box;
-    border-radius: 7px;
-    color: var(--purple-600);
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  /* Sidebar blocks */
-  .container .md-col-3 {
-    margin-top: 4px;
-  }
-  .container .md-col-3 section.border.border-gray {
-    border: none;
-  }
-
-  /* Heading container */
-  .container .md-col-3 section.border.border-gray .bg-silver {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-  }
-
-  /* Headings */
-  .container .md-col-3 section.border.border-gray .bg-silver h3 {
-    color: var(--charcoal-700);
-    font-weight: 500;
-    font-size: 13px;
-    border-top: 1px solid var(--gray-500);
-    width: calc(100% - 20px);
-    margin: 0 10px 10px 10px;
-    padding: 15px 0 0 0;
-  }
-  /* First Heading */
-  .container .md-col-3 section.border.border-gray:first-child .bg-silver h3 {
-    border-top: none;
-    padding-top: 0;
-    font-size: 18px;
-    margin: 0 0 19px 0;
-    position: relative;
-    line-height: 40px;
-    padding-left: 48px;
-    -webkit-font-smoothing: antialiased;
-  }
-  .container
-    .md-col-3
-    section.border.border-gray:first-child
-    .bg-silver
-    h3::before {
-    content: "";
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: url("https://buildkite.com/_next/static/assets/assets/images/brand-assets/buildkite-mark-83624418.svg")
-      center no-repeat rgb(26, 0, 46);
-    background-size: 22px;
-    border-radius: 4px;
-  }
-
-  /* General rows (links) */
-  .container .md-col-3 section.border.border-gray a {
-    padding: 0 10px;
-    font-weight: normal;
-    color: var(--charcoal-700);
-    border-radius: 4px;
-    -webkit-font-smoothing: antialiased;
-    height: 40px;
-    min-height: 40px !important;
-    transition: background 0.16s;
-  }
-  .container .md-col-3 section.border.border-gray a .badge--solid {
-    background: white;
-    border: 1px solid var(--gray-500);
-    color: var(--charcoal-300);
-    font-size: 11px;
-    border-radius: 4px;
-  }
-  .container .md-col-3 section.border.border-gray a .icon-mr {
-    width: 24px;
-    height: 24px;
-    margin-right: 14px;
-  }
-  .container .md-col-3 section.border.border-gray a .icon-mr svg {
-    width: 20px;
-  }
-  /* Row interaction */
-  .container .md-col-3 section.border.border-gray a:hover {
-    background: #f8f7ff;
-  }
-  .container .md-col-3 section.border.border-gray a:hover .badge--solid {
-    border-color: var(--purple-300);
-    color: var(--charcoal-500);
-  }
-
-  /* Selected link */
-  .container .md-col-3 section.border.border-gray a.lime {
-    background: var(--purple-100);
-    font-weight: 500;
-    color: var(--purple-600);
-  }
-  .container .md-col-3 section.border.border-gray a.lime .badge--solid {
-    color: var(--purple-600);
-    font-weight: 500;
-    border-color: var(--purple-300);
-  }
-
-  /* Primary nav -> Buildkite logo */
-  #nav-container
-    .container
-    button.btn.focus-lime.hover-faded-children
-    div.flex-none {
-    width: 28px;
-    height: 28px;
-    overflow: hidden;
-    opacity: 1;
-    background: url("https://buildkite.com/_next/static/assets/assets/images/brand-assets/buildkite-mark-83624418.svg")
-      left center no-repeat;
-    background-size: 26px;
-  }
-  #nav-container
-    .container
-    button.btn.focus-lime.hover-faded-children
-    div.flex-none
-    img {
-    display: none;
-  }
-  /* Primary nav -> Users name */
-  #nav-container .container button.btn.focus-lime.py0 span.xs-offscreen {
-    display: none;
-  }
-  /* Primary nav -> Badges */
-  #nav-container .container a .badge--solid {
-    background: white;
-    border: 1px solid var(--gray-500);
-    color: var(--charcoal-500);
-    font-weight: 500;
-  }
-  #nav-container .bg-warning-stripes {
-    background: var(--slate-100);
-    margin-top: 4px;
-  }
-  #nav-container .bg-warning-stripes::before {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    content: "";
-    background-color: var(--orange-500);
-    background-image: linear-gradient(
-      -45deg,
-      rgba(255, 255, 255, 0.5) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(255, 255, 255, 0.5) 50%,
-      rgba(255, 255, 255, 0.5) 75%,
-      transparent 75%,
-      transparent
-    );
-    background-size: 10px 10px;
-    -webkit-animation: animation-loading-bar 100s infinite linear;
-    animation: animation-loading-bar 100s infinite linear;
-  }
-}
-
-@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/analytics.*")
-{
-  #main .analytics-nav {
-    min-width: 240px;
-    max-width: 240px;
-    display: block;
-    margin: 4px 20px 0 0;
-    padding-top: 0;
+  div[data-pipeline] div.ml3.pr4 {
     padding-right: 0;
-    border-right: 0;
   }
-  #main .analytics-nav span {
-    display: block;
-    float: left;
-    width: 100%;
-    margin-bottom: 0;
-    margin-left: 0px !important;
+  div[data-pipeline] div.items-center.justify-start.ml2 {
+    margin-left: 20px;
     position: relative;
   }
+  div[data-pipeline] div.items-center.justify-start::before {
+    content: "";
+    width: 7em;
+    display: flex;
+    height: 60px;
+    width: 44px;
+    background: url(https://assets.codepen.io/t-6760/24-state-pass.svg) center
+      no-repeat var(--green-200);
+    margin-right: 20px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+  }
+  div[data-pipeline] div.items-center.justify-start .flex-column {
+    width: 90px;
+  }
 
-  #main .analytics-nav span span {
-    position: absolute;
+  div[data-pipeline] div.items-center.justify-start .flex-column span.truncate {
+    overflow: inherit;
+  }
+
+  div[data-pipeline]:has(span:last-child > * > .bg-build-failed)
+    div.items-center.justify-start::before {
+    background-color: #ffccdd;
+    background-image: url(https://assets.codepen.io/t-6760/24-state-fail.svg);
+  }
+  div[data-pipeline]:has(span:last-child > * > .bg-build-running)
+    div.items-center.justify-start::before {
+    background-color: var(--orange-100);
+    background-image: none;
+  }
+
+  div[data-pipeline]:has(span:last-child > * > .bg-build-running)
+    div.items-center.justify-start::after {
+    content: "";
     width: 24px;
     height: 24px;
-    top: 8px;
+    background: url(https://assets.codepen.io/t-6760/24-state-running.svg);
+    position: absolute;
     left: 10px;
+    top: 18px;
+    z-index: 10;
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
   }
 
-  #main .analytics-nav span a {
-    background-color: white;
-    float: left;
-    width: 100%;
-    height: 40px;
-    border-radius: 4px;
-    line-height: 40px;
-    text-decoration: none;
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0 0 0 48px;
-    border: 0;
+  @-webkit-keyframes rotating {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
   }
-
-  #main .analytics-nav span svg {
-    margin: 3px 0 0 5px;
-  }
-  #main .analytics-nav span svg path {
-    stroke: var(--charcoal-700);
-  }
-
-  #main .analytics-nav span a.bold {
-    background: var(--purple-100);
-    color: var(--purple-600);
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .container-test-analytics {
-    padding-left: 0;
-  }
-
-  #main .analytics-nav span[style]:first-child a {
-    margin-bottom: 24px;
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--charcoal-900);
-    -webkit-font-smoothing: antialiased;
-  }
-  #main .analytics-nav span[style]:first-child span {
-    margin-bottom: 0px !important;
-    width: 40px;
-    height: 40px;
-    top: 0;
-    left: 0;
-    border-radius: 4px;
-    background: url(https://buildkite.com/_next/static/assets/assets/images/brand-assets/buildkite-mark-83624418.svg)
-      center no-repeat rgb(26, 0, 46);
-    background-size: 22px;
-  }
-  #main .analytics-nav span[style]:first-child span svg {
-    display: none;
-  }
-
-  .container-test-analytics.PageHeader h1 {
-    display: none;
-  }
-  .container-test-analytics.PageHeader {
-    min-height: 40px;
-    margin-top: 4px;
-    margin-bottom: 24px;
-  }
-  #main .analytics-nav span[style]:nth-child(2) a {
-    margin-top: -20px !important;
-  }
-  #main .analytics-nav span[style]:nth-child(2) span {
-    top: -12px;
-  }
-}
-
-@-moz-document regexp("https://buildkite\\.com/[a-zA-Z]+/[a-zA-Z]+/builds.*"),
-  regexp("https://buildkite\\.com/[a-zA-Z]+/[a-zA-Z]+/steps.*"), 
-  regexp("https://buildkite\\.com/[a-zA-Z]+")
-{
-  #nav-container .container .flex span.md-hide .flex a:nth-child(1) {
-    background: var(--purple-100);
-    border: 4px solid var(--slate-100);
-    box-sizing: border-box;
-    border-radius: 7px;
-    color: var(--purple-600);
-    padding-left: 10px !important;
-    padding-right: 10px;
-  }
-}
-@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/builds.*")
-{
-  #nav-container .container .flex span.md-hide .flex a:nth-child(2) {
-    background: var(--purple-100);
-    border: 4px solid var(--slate-100);
-    box-sizing: border-box;
-    border-radius: 7px;
-    color: var(--purple-600);
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/agents.*")
-{
-  #nav-container .container .flex span.md-hide .flex a:nth-child(3) {
-    background: var(--purple-100);
-    border: 4px solid var(--slate-100);
-    box-sizing: border-box;
-    border-radius: 7px;
-    color: var(--purple-600);
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/clusters.*")
-{
-  #nav-container .container .flex span.md-hide .flex a:nth-child(4) {
-    background: var(--purple-100);
-    border: 4px solid var(--slate-100);
-    box-sizing: border-box;
-    border-radius: 7px;
-    color: var(--purple-600);
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-@-moz-document regexp("https://buildkite\\.com/organizations/[a-zA-Z]+/analytics.*")
-{
-  #nav-container .container .flex span.md-hide .flex a:nth-child(5) {
-    background: var(--purple-100);
-    border: 4px solid var(--slate-100);
-    box-sizing: border-box;
-    border-radius: 7px;
-    color: var(--purple-600);
-    padding-left: 10px;
-    padding-right: 10px;
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
   }
 }
