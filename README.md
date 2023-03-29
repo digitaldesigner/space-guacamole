@@ -7,6 +7,8 @@ Use this to enjoy some fun UI experiments which may or may not make your Buildki
 
 ## Installation
 
+[![Watch an installation demo](https://cdn.loom.com/sessions/thumbnails/a32d7483ca974d5fb8bc747f0dd6caab-with-play.gif)](https://www.loom.com/share/a32d7483ca974d5fb8bc747f0dd6caab)
+
 - Install the Stylus extension for [Chrome/Edge](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en) or [FireFox](https://addons.mozilla.org/en-US/firefox/addon/styl-us)
 - Open [`theme.user.css`](https://github.com/yourfriendbuzz/space-guacamole/raw/main/theme.user.css)
 - Click the "Install style" button on the left to install the theme
